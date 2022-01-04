@@ -24,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/auth_page/**").authenticated()
                 .antMatchers("/user_info").authenticated()
-                .antMatchers("/admin/**").hasAuthority("ROLE_ADMIN") // ROLE_ADMIN, ROLE_SUPERADMIN
+                .antMatchers("/admin/**").hasAnyRole("ADMIN") // ROLE_ADMIN, ROLE_SUPERADMIN
                 .antMatchers("/read/**").hasAuthority("READ_PRIVILEGE")
                 .antMatchers("/write/**").hasAuthority("WRITE_PRIVILEGE")
                 .antMatchers("/delete/**").hasAuthority("DELETE_PRIVILEGE")
